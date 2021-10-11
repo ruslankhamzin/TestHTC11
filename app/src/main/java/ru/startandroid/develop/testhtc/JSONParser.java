@@ -11,7 +11,18 @@ public class JSONParser {
         String companyname = jsonObject.getString("name");
         String companyage = jsonObject.getString("age");
         JSONArray compArray = jsonObject.getJSONArray("competences");
-        String companycompetences = compArray.toString();
+        StringBuilder sb = new StringBuilder();
+        for(int i=0;i<compArray.length();i++){
+            if (i==compArray.length()-1){
+                sb.append(compArray.get(i));
+            }
+            else {
+                sb.append(compArray.get(i)).append(",");
+            }
+
+        }
+
+        String companycompetences = sb.toString();
         Company.company.add(new Company("Company name: "+companyname,"age: "+companyage,"Competences: "+companycompetences));
         JSONArray employees1 = jsonObject.getJSONArray("employees");
         for (int i = 0; i < employees1.length(); i++) {
@@ -33,9 +44,19 @@ public class JSONParser {
             }
             try {
 
-
                 JSONArray skillsArray = employees1JSONObject.getJSONArray("skills");
-                String skills = skillsArray.toString();
+                sb.delete(0,sb.length());
+              for(int j=0;j<skillsArray.length();j++){
+                  if(j==skillsArray.length()-1){
+                      sb.append(skillsArray.get(j));
+                  }
+                  else {
+                      sb.append(skillsArray.get(j)).append(",");
+                  }
+                  }
+              String skills = sb.toString();
+                sb.delete(0,sb.length());
+
                 employee.setSkills("skills: "+skills);
             }
             catch (JSONException e){

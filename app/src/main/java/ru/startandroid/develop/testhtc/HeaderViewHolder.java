@@ -13,6 +13,11 @@ public class HeaderViewHolder extends RecyclerView.ViewHolder {
         name = (TextView) itemView.findViewById(R.id.companyTV);
         age = (TextView) itemView.findViewById(R.id.ageTV);
         competences=(TextView) itemView.findViewById(R.id.competencesTV);
+        Company company= Company.company.get(0);
+
+        name.setText(company.getName());
+        age.setText(company.getAge());
+        competences.setText(company.getCompetences());
     }
 
 }

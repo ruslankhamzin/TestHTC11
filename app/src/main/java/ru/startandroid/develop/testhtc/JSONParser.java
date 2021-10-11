@@ -17,7 +17,7 @@ public class JSONParser {
                 sb.append(compArray.get(i));
             }
             else {
-                sb.append(compArray.get(i)).append(",");
+                sb.append(compArray.get(i)).append(", ");
             }
 
         }
@@ -51,7 +51,7 @@ public class JSONParser {
                       sb.append(skillsArray.get(j));
                   }
                   else {
-                      sb.append(skillsArray.get(j)).append(",");
+                      sb.append(skillsArray.get(j)).append(", ");
                   }
                   }
               String skills = sb.toString();

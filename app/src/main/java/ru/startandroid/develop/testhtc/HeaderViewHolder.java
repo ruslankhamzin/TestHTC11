@@ -1,5 +1,6 @@
 package ru.startandroid.develop.testhtc;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.TextView;
 
@@ -8,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class HeaderViewHolder extends RecyclerView.ViewHolder {
     private TextView name,age,competences,employees;
+    @SuppressLint("SetTextI18n")
     public HeaderViewHolder(@NonNull View itemView) {
         super(itemView);
         name = (TextView) itemView.findViewById(R.id.companyTV);
@@ -15,7 +17,6 @@ public class HeaderViewHolder extends RecyclerView.ViewHolder {
         competences=(TextView) itemView.findViewById(R.id.competencesTV);
         employees=(TextView) itemView.findViewById(R.id.employeesTv);
         Company company= Company.company.get(0);
-
         name.setText("Company name: "+company.getName());
         age.setText("Age: "+company.getAge());
         competences.setText("Competences: "+company.getCompetences());

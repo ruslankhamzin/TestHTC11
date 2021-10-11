@@ -1,28 +1,18 @@
 package ru.startandroid.develop.testhtc;
 
-import android.app.Activity;
 
 import org.json.JSONException;
-
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-
 import ru.startandroid.develop.testhtc.utils.NetworkUtils;
 
 public class EmployeesRepository {
     public static List<Employees> employees = new ArrayList<>();
     private static EmployeesRepository instance;
-    public static String s;
+
 
 
 
@@ -30,12 +20,7 @@ public class EmployeesRepository {
       NetThread thread = new NetThread();
       thread.start();
       thread.join();
-      Collections.sort(employees, new Comparator<Employees>() {
-          @Override
-          public int compare(Employees o1, Employees o2) {
-                  return o1.getName().compareTo(o2.getName());
-          }
-      });
+      Collections.sort(employees, (o1, o2) -> o1.getName().compareTo(o2.getName()));
 
 
     }

@@ -1,4 +1,4 @@
-package ru.startandroid.develop.testhtc;
+package ru.startandroid.develop.testhtc.models;
 
 import java.util.ArrayList;
 

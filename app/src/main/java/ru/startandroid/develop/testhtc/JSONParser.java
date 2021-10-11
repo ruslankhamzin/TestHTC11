@@ -4,6 +4,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import ru.startandroid.develop.testhtc.models.Company;
+import ru.startandroid.develop.testhtc.models.Employees;
+import ru.startandroid.develop.testhtc.repository.EmployeesRepository;
+
 public class JSONParser {
     public static void parseJson(String json) throws JSONException {
         JSONObject jsonObject1 = new JSONObject(json);

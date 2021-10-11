@@ -8,6 +8,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import ru.startandroid.develop.testhtc.models.Employees;
+
 public class EmployeesAdapter extends RecyclerView.Adapter {
     private final LayoutInflater inflater;
     private final List<Employees> employees;

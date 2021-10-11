@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import ru.startandroid.develop.testhtc.models.Employees;
+
 public class EmployeesViewHolder extends RecyclerView.ViewHolder {
     private final TextView nameTV;
     private final TextView numberTV;

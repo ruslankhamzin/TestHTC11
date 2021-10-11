@@ -7,6 +7,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import ru.startandroid.develop.testhtc.models.Company;
+
 public class HeaderViewHolder extends RecyclerView.ViewHolder {
 
     @SuppressLint("SetTextI18n")

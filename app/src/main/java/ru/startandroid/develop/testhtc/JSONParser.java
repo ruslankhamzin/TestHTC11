@@ -45,14 +45,16 @@ public class JSONParser {
                 sb.delete(0, sb.length());
                 for (int j = 0; j < skillsArray.length(); j++) {
                     if (j == skillsArray.length() - 1) {
+                        sb.append(skillsArray.get(j));
                     } else {
                         sb.append(skillsArray.get(j)).append(", ");
                     }
                 }
                 String skills = sb.toString();
+                employee.setSkills(skills);
                 sb.delete(0, sb.length());
 
-                employee.setSkills(skills);
+
             } catch (JSONException e) {
                 employee.setSkills("-");
             }

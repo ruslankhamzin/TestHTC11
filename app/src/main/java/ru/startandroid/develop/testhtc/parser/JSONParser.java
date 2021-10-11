@@ -1,4 +1,4 @@
-package ru.startandroid.develop.testhtc;
+package ru.startandroid.develop.testhtc.parser;
 
 import org.json.JSONArray;
 import org.json.JSONException;

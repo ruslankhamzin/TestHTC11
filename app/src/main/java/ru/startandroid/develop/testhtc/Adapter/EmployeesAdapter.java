@@ -1,4 +1,4 @@
-package ru.startandroid.develop.testhtc;
+package ru.startandroid.develop.testhtc.Adapter;
 
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
@@ -8,6 +8,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import ru.startandroid.develop.testhtc.R;
+import ru.startandroid.develop.testhtc.ViewHolders.EmployeesViewHolder;
+import ru.startandroid.develop.testhtc.ViewHolders.HeaderViewHolder;
 import ru.startandroid.develop.testhtc.models.Employees;
 
 public class EmployeesAdapter extends RecyclerView.Adapter {

@@ -7,7 +7,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import ru.startandroid.develop.testhtc.models.Employees;
-import ru.startandroid.develop.testhtc.JSONParser;
+import ru.startandroid.develop.testhtc.parser.JSONParser;
 
 public class NetThread extends Thread {
     static ArrayList<Employees> list;

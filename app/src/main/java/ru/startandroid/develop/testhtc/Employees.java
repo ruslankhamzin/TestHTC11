@@ -2,15 +2,17 @@ package ru.startandroid.develop.testhtc;
 
 
 public class Employees {
-    public String name="Unknown name";
-    public String phone_number="-";
-    public String skills="-";
+    public String name;
+    public String phone_number;
+    public String skills;
+
     public Employees(String name, String phone_number, String skills) {
         this.name = name;
         this.phone_number = phone_number;
         this.skills = skills;
     }
-    public Employees(){
+
+    public Employees() {
 
     }
 
@@ -19,7 +21,7 @@ public class Employees {
     }
 
     public void setName(String name) {
-       this.name = name;
+        this.name = name;
     }
 
     public String getPhone_number() {

@@ -6,7 +6,7 @@ public class Company {
     private String name;
     private String age;
     private String competences;
-    public static  ArrayList<Company> company = new ArrayList<>();
+    public static ArrayList<Company> company = new ArrayList<>();
 
     public Company(String name, String age, String competences) {
         this.name = name;

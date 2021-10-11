@@ -29,71 +29,28 @@ import ru.startandroid.develop.testhtc.utils.NetworkUtils;
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView textView;
-    URL url;
+    static String s;
 
-    {
-        try {
-            url = new URL("http://www.mocky.io/v2/5ddcd3673400005800eae483");
-        } catch (MalformedURLException e) {
-            e.printStackTrace();
-        }
-    }
 
-    private List<Employees> employees=new ArrayList<>();
+    private List<Employees> employees = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        new MockyQueryTask().execute(url);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         try {
             employees.addAll(EmployeesRepository.getInstance().getEmployees());
-        } catch (IOException | JSONException e) {
+        } catch (IOException | JSONException | InterruptedException e) {
             e.printStackTrace();
         }
         textView = findViewById(R.id.button);
-        recyclerView=findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(new EmployeesAdapter(LayoutInflater.from(this),employees));
+        recyclerView.setAdapter(new EmployeesAdapter(LayoutInflater.from(this), employees));
 
     }
-   public class MockyQueryTask extends AsyncTask<URL,Void,String>{
-
-        @Override
-        protected String doInBackground(URL... urls) {
-            String response=null;
-            try {
-                response= NetworkUtils.getResponseFromURL(urls[0]);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return response;
-
-        }
-
-       @Override
-       protected void onPostExecute(String s) {
-            String first=null;
-           try {
-               JSONObject jsonObject = new JSONObject(s);
-               JSONObject object = jsonObject.getJSONObject("company");
-              JSONArray array = object.getJSONArray("employees");
-              JSONObject object1 = array.getJSONObject(0);
-                first = object1.getString("name");
-
-
-
-           } catch (JSONException e) {
-               e.printStackTrace();
-           }
-
-           try {
-               JSONParser.parseJson(s);
-           } catch (IOException | JSONException e) {
-               e.printStackTrace();
-           }
-           textView.setText(first);
-       }
-   }
 }

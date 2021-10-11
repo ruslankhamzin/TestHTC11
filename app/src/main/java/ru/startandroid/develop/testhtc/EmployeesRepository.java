@@ -1,40 +1,62 @@
 package ru.startandroid.develop.testhtc;
 
-import android.util.Log;
+import android.app.Activity;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonParser;
-
-import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.lang.reflect.Type;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
+
+import ru.startandroid.develop.testhtc.utils.NetworkUtils;
 
 public class EmployeesRepository {
     public static List<Employees> employees = new ArrayList<>();
     private static EmployeesRepository instance;
+    public static String s;
 
 
-    //private EmployeesRepository( ) throws IOException, JSONException {
 
-      //  }
+    private EmployeesRepository() throws IOException, JSONException, InterruptedException {
+      NetThread thread = new NetThread();
+      thread.start();
+      thread.join();
 
-        //Gson g = new Gson();
-        //Employees[] employeesArray = g.fromJson(JSONParser.parseJson(),Employees[].class);
-        //employees.addAll(Arrays.asList(employeesArray));
+        }
 
-     //  }
-    public static EmployeesRepository getInstance() throws IOException, JSONException {
-        if (instance==null){
-            instance=new EmployeesRepository();
+
+
+    public static EmployeesRepository getInstance() throws IOException, JSONException, InterruptedException {
+        if (instance == null) {
+            instance = new EmployeesRepository();
         }
         return instance;
     }
-    public List<Employees> getEmployees(){return employees;}
+
+    public List<Employees> getEmployees() {
+        return employees;
+    }
+
 }
+    class NetThread extends Thread{
+        static ArrayList<Employees> list;
+        @Override
+        public void run() {
+                    try {
+                        URL url = new URL("http://www.mocky.io/v2/5ddcd3673400005800eae483");
+                            String response =NetworkUtils.getResponseFromURL(url);
+                            JSONParser.parseJson(response);
+
+
+                    } catch (IOException | JSONException e) {
+                        e.printStackTrace();
+                    }
+        }
+            }
+

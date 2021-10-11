@@ -23,24 +23,24 @@ public class JSONParser {
         }
 
         String companycompetences = sb.toString();
-        Company.company.add(new Company("Company name: "+companyname,"age: "+companyage,"Competences: "+companycompetences));
+        Company.company.add(new Company(companyname,companyage,companycompetences));
         JSONArray employees1 = jsonObject.getJSONArray("employees");
         for (int i = 0; i < employees1.length(); i++) {
             Employees employee = new Employees();
             JSONObject employees1JSONObject = employees1.getJSONObject(i);
             try {
                 String name = employees1JSONObject.getString("name");
-                employee.setName("name:"+name);
+                employee.setName(name);
             }
             catch (JSONException e){
-                employee.setName("name: -");
+                employee.setName("unknown name");
             }
             try{
             String phone_number = employees1JSONObject.getString("phone_number");
-            employee.setPhone_number("phone number: "+phone_number);
+            employee.setPhone_number(phone_number);
             }
             catch (JSONException e){
-                employee.setPhone_number("phone number: -");
+                employee.setPhone_number("-");
             }
             try {
 
@@ -57,10 +57,10 @@ public class JSONParser {
               String skills = sb.toString();
                 sb.delete(0,sb.length());
 
-                employee.setSkills("skills: "+skills);
+                employee.setSkills(skills);
             }
             catch (JSONException e){
-                employee.setSkills("skills: -");
+                employee.setSkills("-");
             }
             EmployeesRepository.employees.add(employee);
         }

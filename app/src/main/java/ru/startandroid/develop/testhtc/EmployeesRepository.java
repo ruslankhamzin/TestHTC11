@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import ru.startandroid.develop.testhtc.utils.NetworkUtils;
@@ -29,7 +30,12 @@ public class EmployeesRepository {
       NetThread thread = new NetThread();
       thread.start();
       thread.join();
-
+      Collections.sort(employees, new Comparator<Employees>() {
+          @Override
+          public int compare(Employees o1, Employees o2) {
+                  return o1.getName().compareTo(o2.getName());
+          }
+      });
 
 
     }

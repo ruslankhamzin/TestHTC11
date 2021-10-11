@@ -15,8 +15,8 @@ public class EmployeesViewHolder extends RecyclerView.ViewHolder {
         skillsTV=itemView.findViewById(R.id.skillsTV);
     }
     public void bind(Employees employee){
-        nameTV.setText(employee.name);
-        numberTV.setText(employee.phone_number);
-        skillsTV.setText(employee.skills.toString());
+        nameTV.setText("name:"+employee.name);
+        numberTV.setText("phone number: "+employee.phone_number);
+        skillsTV.setText("skills: "+employee.skills.toString());
     }
 }

@@ -9,8 +9,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class EmployeesAdapter extends RecyclerView.Adapter {
-private LayoutInflater inflater;
-private List<Employees> employees;
+private final LayoutInflater inflater;
+private final List<Employees> employees;
 private static final int VIEW_TYPE_HEADER=0;
 private static final int VIEW_TYPE_RECYCLER=1;
 public EmployeesAdapter(LayoutInflater inflater,List<Employees> employees){

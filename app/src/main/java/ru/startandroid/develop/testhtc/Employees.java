@@ -1,6 +1,5 @@
 package ru.startandroid.develop.testhtc;
 
-import androidx.annotation.NonNull;
 
 public class Employees {
     public String name="Unknown name";
@@ -20,10 +19,7 @@ public class Employees {
     }
 
     public void setName(String name) {
-        if(name==null){
-            this.name="unknown name";
-        }
-        else{this.name = name;};
+       this.name = name;
     }
 
     public String getPhone_number() {

@@ -8,14 +8,14 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class HeaderViewHolder extends RecyclerView.ViewHolder {
-    private TextView name,age,competences,employees;
+
     @SuppressLint("SetTextI18n")
     public HeaderViewHolder(@NonNull View itemView) {
         super(itemView);
-        name = (TextView) itemView.findViewById(R.id.companyTV);
-        age = (TextView) itemView.findViewById(R.id.ageTV);
-        competences=(TextView) itemView.findViewById(R.id.competencesTV);
-        employees=(TextView) itemView.findViewById(R.id.employeesTv);
+        TextView name = itemView.findViewById(R.id.companyTV);
+        TextView age =  itemView.findViewById(R.id.ageTV);
+        TextView competences = itemView.findViewById(R.id.competencesTV);
+        TextView employees = itemView.findViewById(R.id.employeesTv);
         Company company= Company.company.get(0);
         name.setText("Company name: "+company.getName());
         age.setText("Age: "+company.getAge());

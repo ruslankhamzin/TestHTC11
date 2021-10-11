@@ -12,7 +12,7 @@ public class JSONParser {
         String companyage = jsonObject.getString("age");
         JSONArray compArray = jsonObject.getJSONArray("competences");
         String companycompetences = compArray.toString();
-        Company.company.add(new Company("company name: "+companyname,"age"+companyage,"Competences: "+companycompetences));
+        Company.company.add(new Company("Company name: "+companyname,"age: "+companyage,"Competences: "+companycompetences));
         JSONArray employees1 = jsonObject.getJSONArray("employees");
         for (int i = 0; i < employees1.length(); i++) {
             Employees employee = new Employees();

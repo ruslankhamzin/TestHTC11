@@ -10,7 +10,7 @@ import ru.startandroid.develop.testhtc.models.Employees;
 import ru.startandroid.develop.testhtc.parser.JSONParser;
 
 public class NetThread extends Thread {
-    static ArrayList<Employees> list;
+
 
     @Override
     public void run() {

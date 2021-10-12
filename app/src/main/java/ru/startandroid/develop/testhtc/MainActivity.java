@@ -22,7 +22,7 @@ import ru.startandroid.develop.testhtc.repository.EmployeesRepository;
 public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     TextView textView;
-    static String s;
+
 
 
     private List<Employees> employees = new ArrayList<>();

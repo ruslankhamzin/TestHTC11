@@ -16,7 +16,7 @@ public class EmployeesRepository {
     private static EmployeesRepository instance;
 
 
-    private EmployeesRepository() throws IOException, JSONException, InterruptedException {
+    private EmployeesRepository() throws InterruptedException {
         NetThread thread = new NetThread();
         thread.start();
         thread.join();
